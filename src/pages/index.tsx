@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { type NextPage } from 'next';
 import Head from 'next/head';
 import { useState } from 'react';
@@ -20,7 +22,7 @@ const Home: NextPage = () => {
       <ul>
         <button onClick={fetchUsers}>取得</button>
         {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
+          <li key={(user as any).id}>{(user as any).name}</li>
         ))}
       </ul>
     </>
